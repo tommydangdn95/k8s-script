@@ -1,0 +1,93 @@
+apiVersion: v1
+kind: List
+items:
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      name: pv-kafka
+      labels:
+        type: local
+    spec:
+      storageClassName: sc-local
+      capacity:
+        storage: 6Gi
+      accessModes:
+        - ReadWriteOnce
+      persistentVolumeReclaimPolicy: Retain
+      hostPath:
+        path: "/home/data/kafka/data"
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      name: pv-kafka1
+      labels:
+        type: local
+    spec:
+      storageClassName: sc-local
+      capacity:
+        storage: 6Gi
+      accessModes:
+        - ReadWriteOnce
+      persistentVolumeReclaimPolicy: Retain
+      hostPath:
+        path: "/home/data/kafka/data"
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      name: pv-kafka2
+      labels:
+        type: local
+    spec:
+      storageClassName: sc-local
+      capacity:
+        storage: 6Gi
+      accessModes:
+        - ReadWriteOnce
+      persistentVolumeReclaimPolicy: Retain
+      hostPath:
+        path: "/home/data/kafka/data"
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      name: pv-zuk
+      labels:
+        type: local
+    spec:
+      storageClassName: sc-local
+      capacity:
+        storage: 7Gi
+      accessModes:
+        - ReadWriteOnce
+      persistentVolumeReclaimPolicy: Retain
+      hostPath:
+        path: "/home/data/zuk/data"
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      name: pv-zuk1
+      labels:
+        type: local
+    spec:
+      storageClassName: sc-local
+      capacity:
+        storage: 7Gi
+      accessModes:
+        - ReadWriteOnce
+      persistentVolumeReclaimPolicy: Retain
+      hostPath:
+        path: "/home/data/zuk/data"
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      name: pv-zuk2
+      labels:
+        type: local
+    spec:
+      storageClassName: sc-local
+      capacity:
+        storage: 7Gi
+      accessModes:
+        - ReadWriteOnce
+      persistentVolumeReclaimPolicy: Retain
+      hostPath:
+        path: "/home/data/zuk/data"

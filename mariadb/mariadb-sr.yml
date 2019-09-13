@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mariadb-sr
+type: Opaque
+data:
+  passsword: YWJjZDEyMzQ= # abcd1234

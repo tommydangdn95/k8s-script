@@ -1,0 +1,59 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: sonarqube-pv-extensions
+  labels:
+    type: local
+spec:
+  storageClassName: sc-local
+  capacity:
+    storage: 9Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/media/sonarqube/extensions"
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: sonarqube-pv-data
+  labels:
+    type: local
+spec:
+  storageClassName: sc-local
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/media/sonarqube/data"
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: sonarqube-pv-logs
+  labels:
+    type: local
+spec:
+  storageClassName: sc-local
+  capacity:
+    storage: 6Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/media/sonarqube/logs"
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: sonarqube-pv-conf
+  labels:
+    type: local
+spec:
+  storageClassName: sc-local
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/media/sonarqube/conf"

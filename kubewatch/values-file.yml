@@ -1,0 +1,20 @@
+rbac:
+  create: true
+resourcesToWatch:
+  deployment: true
+  replicationcontroller: true
+  replicaset: true
+  statefulsets: true
+  daemonset: true
+  services: true
+  pod: true
+  job: true
+  persistentvolume: true
+  persistentvolumeclaim: true
+  namespace: true
+  secret: true
+  configmap: true
+  ingress: true
+slack:
+  channel: '#kubernetes'
+  token: 'xoxb-571853019495-571856039255-Cip7EiWABxtJ0kYj36J9utb1'

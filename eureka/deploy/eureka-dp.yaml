@@ -1,0 +1,35 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: eureka-dp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: eureka
+  minReadySeconds: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: eureka
+    spec:
+      containers:
+        - name: eureka-pod
+          image: thuydt/eureka
+          ports:
+            - containerPort: 8761
+          env:
+            - name: NODE_IP
+              value: 192.168.1.219
+      #     volumeMounts:
+      #       - mountPath: "/usr/local/tomcat/webapps/"
+      #         name: eureka-volume
+      # volumes:
+      #   - name: eureka-volume
+      #     persistentVolumeClaim:
+      #       claimName: eureka-pvc

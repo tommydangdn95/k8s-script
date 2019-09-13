@@ -1,0 +1,38 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: openresty-dp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: openresty
+  minReadySeconds: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: openresty
+    spec:
+      containers:
+        - name: openresty-pod
+          image: openresty/openresty
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - mountPath: "/usr/local/openresty/nginx/html"
+              name: openresty-volume
+            - mountPath: "/etc/nginx/conf.d"
+              name: openresty-conf
+      volumes:
+        - name: openresty-volume
+          persistentVolumeClaim:
+            claimName: openresty-pvc
+        - name: openresty-conf
+          persistentVolumeClaim:
+            claimName: openresty-conf-pvc
+

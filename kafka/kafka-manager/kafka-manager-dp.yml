@@ -1,0 +1,28 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: kafka-gui-dp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kafka-gui
+  minReadySeconds: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: kafka-gui
+    spec:
+      containers:
+        - name: kafka-gui-pod
+          image: hlebalbau/kafka-manager
+          ports:
+            - containerPort: 9000
+          env:
+            - name: ZK_HOSTS
+              value: "192.168.1.134:30022,192.168.1.155:30022,192.168.1.192:30022"

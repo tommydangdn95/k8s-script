@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kafka-gui-svc
+  labels:
+    app: kafka-gui
+spec:
+  type: LoadBalancer
+  sessionAffinity: ClientIP
+  ports:
+  - name: kafka-gui-port
+    protocol: TCP
+    port: 9500
+    targetPort: 9000
+    nodePort: 30023
+  selector:
+    app: kafka-gui

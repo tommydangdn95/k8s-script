@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis-svc-master
+  labels:
+    app: redis
+    role: master
+spec:
+  type: NodePort
+  sessionAffinity: ClientIP
+  ports:
+  - name: redis-port
+    protocol: TCP
+    port: 6379
+    targetPort: 6379
+  selector:
+    app: redis
+    role: master
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis-svc-slave
+  labels:
+    app: redis
+    role: slave
+spec:
+  type: NodePort
+  sessionAffinity: ClientIP
+  ports:
+  - name: redis-port
+    protocol: TCP
+    port: 6379
+    targetPort: 6379
+  selector:
+    app: redis
+    role: slave

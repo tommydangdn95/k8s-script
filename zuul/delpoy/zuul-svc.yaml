@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: zuul-svc
+  labels:
+    app: zuul
+spec:
+  # type: NodePort
+  type: LoadBalancer
+  sessionAffinity: ClientIP
+  ports:
+  - protocol: TCP
+    port: 8085
+    targetPort: 8085
+  selector:
+    app: zuul

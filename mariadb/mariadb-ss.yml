@@ -1,0 +1,43 @@
+apiVersion: apps/v1beta2
+kind: StatefulSet
+metadata:
+  name: mariadb-ss
+spec:
+  selector:
+    matchLabels:
+      app: mariadb
+  serviceName: mariadb-svc
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: mariadb
+    spec:
+      containers:
+        - name: mariadb-pod
+          image: mariadb:latest
+          args: ["--character-set-server=utf8mb4", "--collation-server=utf8mb4_unicode_ci", "--init-connect='SET NAMES UTF8;'", "--innodb-flush-log-at-trx-commit=0"]
+          ports:
+            - containerPort: 3306
+          volumeMounts:
+            - name: data                   
+              mountPath: /var/lib/mysql
+              readOnly: false
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom: 
+                secretKeyRef:
+                  name: mariadb-sr
+                  key: passsword
+            - name: MYSQL_DATABASE
+              value: portus_production
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        storageClassName: sc-local
+        resources:
+          requests:
+            storage: 15Gi
+        accessModes:
+          - ReadWriteOnce

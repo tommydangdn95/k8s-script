@@ -1,0 +1,44 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: tomcat-api-common-dp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: tomcat-api-common
+  minReadySeconds: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: tomcat-api-common
+    spec:
+      containers:
+        - name: tomcat-api-common-pod
+          image: tomcat:9.0.16-jre11
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+            - name: tomcat-api-common-store
+              mountPath: "/usr/local/tomcat/webapps/"
+            - name: tomcat-api-common-config
+              mountPath: /usr/local/tomcat/conf/server.xml
+              subPath: server.xml
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: dev
+      volumes:
+        - name: tomcat-api-common-store
+          persistentVolumeClaim:
+            claimName: tomcat-api-common-pvc
+        - name: tomcat-api-common-config
+          configMap:
+            name: tomcat-api-common-cm
+            items:
+                - key: server.xml
+                  path: server.xml

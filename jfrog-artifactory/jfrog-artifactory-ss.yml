@@ -1,0 +1,58 @@
+apiVersion: apps/v1beta2
+kind: StatefulSet
+metadata:
+  name: jfrog-artifactory-ss
+spec:
+  selector:
+    matchLabels:
+      app: jfrog-artifactory
+  serviceName: jfrog-artifactory-svc
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: jfrog-artifactory
+    spec:
+      containers:
+        - name: jfrog-artifactory
+          image: docker.bintray.io/jfrog/artifactory-oss:4.16.0
+          ports:
+            - containerPort: 8081
+          volumeMounts:
+            - name: data                   
+              mountPath: /var/opt/jfrog/artifactory/data
+              readOnly: false
+            - name: logs
+              mountPath: /var/opt/jfrog/artifactory/logs
+              readOnly: false
+            - name: etc
+              mountPath: /var/opt/jfrog/artifactory/etc
+              readOnly: false
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        storageClassName: sc-local
+        resources:
+          requests:
+            storage: 30Gi
+        accessModes:
+          - ReadWriteOnce
+    - metadata:
+        name: logs
+      spec:
+        storageClassName: sc-local
+        resources:
+          requests:
+            storage: 30Gi
+        accessModes:
+          - ReadWriteOnce
+    - metadata:
+        name: etc
+      spec:
+        storageClassName: sc-local
+        resources:
+          requests:
+            storage: 30Gi
+        accessModes:
+          - ReadWriteOnce

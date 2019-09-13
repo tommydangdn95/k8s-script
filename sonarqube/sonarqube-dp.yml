@@ -1,0 +1,47 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: sonarqube-dp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sonarqube
+  minReadySeconds: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: sonarqube
+    spec:
+      containers:
+        - name: sonarqube-pod
+          image: sonarqube
+          ports:
+            - containerPort: 9000
+      #     volumeMounts:
+      #       - mountPath: "/opt/sonarqube/extensions"
+      #         name: sonarqube-extensions
+      #       - mountPath: "/opt/sonarqube/data"
+      #         name: sonarqube-data
+      #       - mountPath: "/opt/sonarqube/logs"
+      #         name: sonarqube-logs
+      #       - mountPath: "/opt/sonarqube/conf"
+      #         name: sonarqube-conf
+      # volumes:
+      #   - name: sonarqube-extensions
+      #     persistentVolumeClaim:
+      #       claimName: sonarqube-pvc-extensions
+      #   - name: sonarqube-data
+      #     persistentVolumeClaim:
+      #       claimName: sonarqube-pvc-data
+      #   - name: sonarqube-logs
+      #     persistentVolumeClaim:
+      #       claimName: sonarqube-pvc-logs
+      #   - name: sonarqube-conf
+      #     persistentVolumeClaim:
+      #       claimName: sonarqube-pvc-conf

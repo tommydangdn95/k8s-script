@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sonarqube-svc
+  labels:
+    app: sonarqube
+spec:
+  type: NodePort  # set type NodePort de node co port expose serice ra ngoai
+  # type: LoadBalancer
+  sessionAffinity: ClientIP
+  ports:
+  - protocol: TCP
+    port: 9000
+    targetPort: 9000
+    nodePort: 30025
+  selector:
+    app: sonarqube

@@ -1,0 +1,44 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: tomcat-api-user-dp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: tomcat-api-user
+  minReadySeconds: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: tomcat-api-user
+    spec:
+      containers:
+        - name: tomcat-api-user-pod
+          image: tomcat:9.0.16-jre11
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+            - name: tomcat-api-user-store
+              mountPath: "/usr/local/tomcat/webapps/"
+            - name: tomcat-api-user-config
+              mountPath: /usr/local/tomcat/conf/server.xml
+              subPath: server.xml
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: dev
+      volumes:
+        - name: tomcat-api-user-store
+          persistentVolumeClaim:
+            claimName: tomcat-api-user-pvc
+        - name: tomcat-api-user-config
+          configMap:
+            name: tomcat-api-user-cm
+            items:
+                - key: server.xml
+                  path: server.xml

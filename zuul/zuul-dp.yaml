@@ -1,0 +1,35 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: zuul-dp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: zuul
+  minReadySeconds: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: zuul
+    spec:
+      containers:
+        - name: zuul-pod
+          image: thuydt/zuul
+          ports:
+            - containerPort: 8085
+          env:
+            - name: EUREKA_IP
+              value: 192.168.1.130
+      #     volumeMounts:
+      #       - mountPath: "/usr/local/tomcat/webapps/"
+      #         name: eureka-volume
+      # volumes:
+      #   - name: eureka-volume
+      #     persistentVolumeClaim:
+      #       claimName: eureka-pvc

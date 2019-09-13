@@ -1,0 +1,48 @@
+apiVersion: v1
+kind: List
+items:
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      name: pv-redis
+      labels:
+        type: local
+    spec:
+      storageClassName: local-storage
+      capacity:
+        storage: 6Gi
+      accessModes:
+        - ReadWriteOnce
+      persistentVolumeReclaimPolicy: Retain
+      hostPath:
+        path: "/media/redis/data"
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      name: pv-redis0
+      labels:
+        type: local
+    spec:
+      storageClassName: local-storage
+      capacity:
+        storage: 6Gi
+      accessModes:
+        - ReadWriteOnce
+      persistentVolumeReclaimPolicy: Retain
+      hostPath:
+        path: "/media/redis/data"
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      name: pv-redis1
+      labels:
+        type: local
+    spec:
+      storageClassName: local-storage
+      capacity:
+        storage: 6Gi
+      accessModes:
+        - ReadWriteOnce
+      persistentVolumeReclaimPolicy: Retain
+      hostPath:
+        path: "/media/redis/data"

@@ -1,0 +1,70 @@
+apiVersion: apps/v1beta2
+kind: StatefulSet
+metadata:
+  name: kafka-ss
+spec:
+  selector:
+    matchLabels:
+      app: kafka
+  serviceName: kafka-svc
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: kafka
+    spec:
+      containers:
+        - name: kafka-pod
+          image: thuydt/kafka:latest
+          ports:
+            - containerPort: 30021
+              name: kafka
+            - containerPort: 2181
+              name: zookeeper
+          volumeMounts:
+            - name: config
+              mountPath: /home
+              readOnly: false
+            - name: data
+              mountPath: /tmp/kafka-logs
+              readOnly: false
+            - name: data-zuk
+              mountPath: /data
+              readOnly: false
+          env:
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: NODE_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.hostIP
+            - name: POD_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
+      volumes:
+        - name: config
+          configMap:
+            name: kafka-cm
+            defaultMode: 0777
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        storageClassName: sc-local
+        resources:
+          requests:
+            storage: 6Gi
+        accessModes:
+          - ReadWriteOnce
+    - metadata:
+        name: data-zuk
+      spec:
+        storageClassName: sc-local
+        resources:
+          requests:
+            storage: 7Gi
+        accessModes:
+          - ReadWriteOnce

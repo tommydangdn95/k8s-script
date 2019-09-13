@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: service-ingress
+  annotations:
+    kubernetes.io/ingress.class: "traefik"
+    traefik.ingress.kubernetes.io/rewrite-target: "/"
+    traefik.ingress.kubernetes.io/app-root: "/"
+    traefik.ingress.kubernetes.io/redirect-permanent: "true"
+    traefik.ingress.kubernetes.io/frontend-entry-points: http,https
+    traefik.frontend.rule.type: PathPrefixStrip
+spec:
+  rules:
+  - host: api-ingress.dev.vn
+    http:
+      paths:
+      - path: /danh-muc
+        backend:
+          serviceName: tomcat-api-common-svc
+          servicePort: 8081
+      - path: /nginx
+        backend:
+          serviceName: nginx-svc
+          servicePort: 8080
+      - path: /openresty
+        backend:
+          serviceName: openresty-svc
+          servicePort: 8000

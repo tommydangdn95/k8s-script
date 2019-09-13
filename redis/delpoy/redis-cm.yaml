@@ -1,0 +1,93 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: redis-cm-master
+data:
+  sentinel.conf: |
+    port 26379
+    daemonize yes
+    pidfile /var/run/redis-sentinel.pid
+    logfile ""
+    dir /tmp
+    sentinel monitor mymaster ip_master 6379 2
+    sentinel down-after-milliseconds mymaster 5000
+    sentinel parallel-syncs mymaster 1
+    sentinel failover-timeout mymaster 5000
+    sentinel deny-scripts-reconfig yes
+  master.conf: |
+    bind 0.0.0.0
+    protected-mode no
+    requirepass redis1234
+    tcp-keepalive 60
+    maxmemory-policy noeviction
+    appendonly yes
+  script.sh: |
+    #!/bin/sh
+    # Get index hostname
+    number=${HOSTNAME//[!0-9]/}
+    # Save hostname and get hostname master node
+    hostname=redis-ss-master-0.redis-svc-master.default.svc.cluster.local
+
+    # Get ip from master
+    ip="$(getent hosts $hostname | awk '{ print $1 }')"
+
+    # cp redis-sentinel to data folder
+    cp /mnt/sentinel.conf /data
+    cp /mnt/master.conf /data
+
+    # replace string ip_master sentinel.conf and slave.conf
+    sed -i "s/ip_master/$ip/g" /data/sentinel.conf
+
+    # run redis-sentinel
+    redis-server /data/sentinel.conf --sentinel;
+
+    # if Pod is 0 copy master.conf else copy slave.conf
+    redis-server /data/master.conf;
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: redis-cm-slave
+data:
+  sentinel.conf: |
+    port 26379
+    daemonize yes
+    pidfile /var/run/redis-sentinel.pid
+    logfile ""
+    dir /tmp
+    sentinel monitor mymaster ip_master 6379 2
+    sentinel down-after-milliseconds mymaster 5000
+    sentinel parallel-syncs mymaster 1
+    sentinel failover-timeout mymaster 5000
+    sentinel deny-scripts-reconfig yes
+  slave.conf: |
+    bind 0.0.0.0
+    protected-mode no
+    tcp-keepalive 60
+    maxmemory-policy noeviction
+    appendonly yes
+    masterauth redis1234
+    requirepass redis1234
+    slaveof ip_master 6379
+  script.sh: |
+    #!/bin/sh
+    # Get index hostname
+    number=${HOSTNAME//[!0-9]/}
+    # Save hostname and get hostname master node
+    hostname=redis-ss-master-0.redis-svc-master.default.svc.cluster.local
+
+    # Get ip from master
+    ip="$(getent hosts $hostname | awk '{ print $1 }')"
+    # cp redis-sentinel to data folder
+    cp /mnt/sentinel.conf /data
+    cp /mnt/slave.conf /data
+
+    # replace string ip_master sentinel.conf and slave.conf
+    sed -i "s/ip_master/$ip/g" /data/sentinel.conf
+    sed -i "s/ip_master/$ip/g" /data/slave.conf
+
+    # run redis-sentinel
+    redis-server /data/sentinel.conf --sentinel;
+
+    # if Pod is 0 copy master.conf else copy slave.conf
+    redis-server /data/slave.conf;

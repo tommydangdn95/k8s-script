@@ -1,0 +1,67 @@
+apiVersion: v1
+kind: List
+items:
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      name: pv-minio
+      labels:
+        type: local
+    spec:
+      storageClassName: sc-local
+      capacity:
+        storage: 10Gi
+      accessModes:
+        - ReadWriteOnce
+      persistentVolumeReclaimPolicy: Retain 
+      hostPath:
+        # path: "/data/minio/"
+        path: "/minio/data/"
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      name: pv-minio1
+      labels:
+        type: local
+    spec:
+      storageClassName: sc-local
+      capacity:
+        storage: 10Gi
+      accessModes:
+        - ReadWriteOnce
+      persistentVolumeReclaimPolicy: Retain
+      hostPath:
+        path: "/minio/data/"
+        # path: "/data/minio/"
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      name: pv-minio2
+      labels:
+        type: local
+    spec:
+      storageClassName: sc-local
+      capacity:
+        storage: 10Gi
+      accessModes:
+        - ReadWriteOnce
+      persistentVolumeReclaimPolicy: Retain
+      hostPath:
+        path: "/minio/data/"
+        # path: "/data/minio/"
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      name: pv-minio3
+      labels:
+        type: local
+    spec:
+      storageClassName: sc-local
+      capacity:
+        storage: 10Gi
+      accessModes:
+        - ReadWriteOnce
+      persistentVolumeReclaimPolicy: Retain
+      hostPath:
+        path: "/minio/data/"
+        # path: "/data/minio/"

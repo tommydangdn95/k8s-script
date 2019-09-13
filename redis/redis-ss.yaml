@@ -1,0 +1,109 @@
+apiVersion: apps/v1beta2
+kind: StatefulSet
+metadata:
+  name: redis-ss-master
+spec:
+  selector:
+    matchLabels:
+      app: redis
+      role: master # role master
+  serviceName: redis-svc-master
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: redis
+        role: master
+    spec:
+      containers:
+        - name: redis-pod-master
+          image: redis:latest
+          command: ["bash"]
+          args: ["/mnt/script.sh"]
+          ports:
+            - containerPort: 6379
+              name: redis-master
+            - containerPort: 2379
+              name: sentinel-master
+          volumeMounts:
+            - name: data                   
+              mountPath: /data
+              readOnly: false
+            - name: config
+              mountPath: /mnt
+              readOnly: false
+          env:
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+      volumes:
+        - name: config
+          configMap:
+            name: redis-cm-master
+            defaultMode: 0777
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        storageClassName: local-storage
+        resources:
+          requests:
+            storage: 6Gi
+        accessModes:
+          - ReadWriteOnce
+---
+apiVersion: apps/v1beta2
+kind: StatefulSet
+metadata:
+  name: redis-ss-slave
+spec:
+  selector:
+    matchLabels:
+      app: redis
+      role: slave
+  serviceName: redis-svc-slave
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: redis
+        role: slave
+    spec:
+      containers:
+        - name: redis-pod
+          image: redis:latest
+          command: ["bash"]
+          args: ["/mnt/script.sh"]
+          ports:
+            - containerPort: 6379
+              name: redis-slave
+            - containerPort: 2379
+              name: sentinel-slave
+          volumeMounts:
+            - name: data                   
+              mountPath: /data
+              readOnly: false
+            - name: config
+              mountPath: /mnt
+              readOnly: false
+          env:
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+      volumes:
+        - name: config
+          configMap:
+            name: redis-cm-slave
+            defaultMode: 0777
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        storageClassName: local-storage
+        resources:
+          requests:
+            storage: 6Gi
+        accessModes:
+          - ReadWriteOnce

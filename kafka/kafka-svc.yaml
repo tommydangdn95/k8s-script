@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kafka-svc
+  labels:
+    app: kafka
+spec:
+  type: LoadBalancer
+  sessionAffinity: ClientIP
+  ports:
+  - name: kafka-port
+    protocol: TCP
+    port: 30021
+    targetPort: 30021
+    nodePort: 30021
+  - name: zookeeper-port
+    protocol: TCP
+    port: 2181
+    targetPort: 2181
+    nodePort: 30022
+  selector:
+    app: kafka

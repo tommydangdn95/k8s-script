@@ -1,0 +1,15 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: keycloak-pv
+  labels:
+    type: local
+spec:
+  storageClassName: sc-local
+  capacity:
+    storage: 30Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain 
+  hostPath:
+    path: "/media/hdd/keycloak/data"

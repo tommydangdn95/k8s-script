@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-lb
+spec:
+  rules:
+      http:
+        paths:
+          - path: /nginx
+            backend:
+              serviceName: nginx-svc
+              servicePort: 80
+          - path: /openresty
+            backend:
+              serviceName: openresty-svc
+              servicePort: 8080

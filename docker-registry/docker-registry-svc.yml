@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: docker-registry-svc
+  labels:
+    app: docker-registry
+spec:
+  type: NodePort
+  sessionAffinity: ClientIP
+  ports:
+  - protocol: TCP
+    port: 5000
+    targetPort: 5000
+    nodePort: 30017
+  selector:
+    app: docker-registry 

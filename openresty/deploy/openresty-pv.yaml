@@ -1,0 +1,14 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: openresty-pv
+  labels:
+    type: local
+spec:
+  storageClassName: sc-local
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/media/openresty/conf/"

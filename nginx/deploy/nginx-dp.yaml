@@ -1,0 +1,39 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: nginx-dp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+  minReadySeconds: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: nginx-pod
+          image: nginx
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - mountPath: "/usr/share/nginx/html"
+              name: nginx-volume
+            - mountPath: "/etc/nginx"
+              name: nginx-conf
+      nodeSelector:
+        node_type: node
+      volumes:
+        - name: nginx-volume
+          persistentVolumeClaim:
+            claimName: nginx-pvc
+        - name: nginx-conf
+          persistentVolumeClaim:
+            claimName: nginx-pvc-conf

@@ -1,0 +1,25 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: apicurio-dp
+spec:
+  selector:
+    matchLabels:
+      app: apicurio
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: apicurio
+    spec:
+      containers:
+        - name: apicurio-pod
+          image: apicurio/apicurio-studio-ui
+          ports:
+            - containerPort: 8080
+              name: apicurio
+            - containerPort: 8443
+              name: apicurio-studio
+          env:
+            - name: APICURIO_KC_AUTH_URL
+              value: http://192.168.1.196:8084/auth/

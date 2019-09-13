@@ -1,0 +1,1430 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>GroupMetadata - kafka.manager.utils.one10.GroupMetadata</title>
+          <meta name="description" content="GroupMetadata - kafka.manager.utils.one10.GroupMetadata" />
+          <meta name="keywords" content="GroupMetadata kafka.manager.utils.one10.GroupMetadata" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'kafka.manager.utils.one10.GroupMetadata';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="type">
+      <div id="definition">
+        <img alt="Class" src="../../../../lib/class_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="kafka">kafka</a>.<a href="../../package.html" class="extype" name="kafka.manager">manager</a>.<a href="../package.html" class="extype" name="kafka.manager.utils">utils</a>.<a href="package.html" class="extype" name="kafka.manager.utils.one10">one10</a></p>
+        <h1>GroupMetadata</h1><h3><span class="morelinks"><div>Related Doc:
+            <a href="package.html" class="extype" name="kafka.manager.utils.one10">package one10</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">GroupMetadata</span><span class="result"> extends <span class="extype" name="kafka.utils.Logging">Logging</span></span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Group contains the following metadata:</p><p> Membership metadata:</p><ol class="decimal"><li>Members registered in this group
+ 2. Current protocol assigned to the group (e.g. partition assignment strategy for consumers)
+ 3. Protocol metadata associated with group members</li></ol><p> State metadata:</p><ol class="decimal"><li>group state
+ 2. generation id
+ 3. leader id
+</li></ol></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@nonthreadsafe</span><span class="args">()</span>
+              
+        </dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="kafka.utils.Logging">Logging</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="kafka.manager.utils.one10.GroupMetadata"><span>GroupMetadata</span></li><li class="in" name="kafka.utils.Logging"><span>Logging</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        <div id="constructors" class="members">
+              <h3>Instance Constructors</h3>
+              <ol><li name="kafka.manager.utils.one10.GroupMetadata#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;(groupId:String,protocolType:Option[String],generationId:Int,protocol:Option[String],leaderId:Option[String]):kafka.manager.utils.one10.GroupMetadata"></a>
+      <a id="&lt;init&gt;:GroupMetadata"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">GroupMetadata</span><span class="params">(<span name="groupId">groupId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="protocolType">protocolType: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="generationId">generationId: <span class="extype" name="scala.Int">Int</span></span>, <span name="protocol">protocol: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="leaderId">leaderId: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@&lt;init&gt;(groupId:String,protocolType:Option[String],generationId:Int,protocol:Option[String],leaderId:Option[String]):kafka.manager.utils.one10.GroupMetadata" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@##():Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="kafka.manager.utils.one10.GroupMetadata#activeProducers" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="activeProducers:scala.collection.Set[Long]"></a>
+      <a id="activeProducers:Set[Long]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">activeProducers</span><span class="result">: <span class="extype" name="scala.collection.Set">Set</span>[<span class="extype" name="scala.Long">Long</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@activeProducers:scala.collection.Set[Long]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.utils.one10.GroupMetadata#add" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="add(member:kafka.manager.utils.one10.MemberMetadata):Unit"></a>
+      <a id="add(MemberMetadata):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">add</span><span class="params">(<span name="member">member: <a href="MemberMetadata.html" class="extype" name="kafka.manager.utils.one10.MemberMetadata">MemberMetadata</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@add(member:kafka.manager.utils.one10.MemberMetadata):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.utils.one10.GroupMetadata#allMemberMetadata" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="allMemberMetadata:List[kafka.manager.utils.one10.MemberMetadata]"></a>
+      <a id="allMemberMetadata:List[MemberMetadata]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">allMemberMetadata</span><span class="result">: <span class="extype" name="scala.List">List</span>[<a href="MemberMetadata.html" class="extype" name="kafka.manager.utils.one10.MemberMetadata">MemberMetadata</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@allMemberMetadata:List[kafka.manager.utils.one10.MemberMetadata]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.utils.one10.GroupMetadata#allMembers" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="allMembers:scala.collection.Set[String]"></a>
+      <a id="allMembers:Set[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">allMembers</span><span class="result">: <span class="extype" name="scala.collection.Set">Set</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@allMembers:scala.collection.Set[String]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.utils.one10.GroupMetadata#allOffsets" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="allOffsets:scala.collection.immutable.Map[org.apache.kafka.common.TopicPartition,kafka.common.OffsetAndMetadata]"></a>
+      <a id="allOffsets:Map[TopicPartition,OffsetAndMetadata]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">allOffsets</span><span class="result">: <span class="extype" name="scala.collection.immutable.Map">Map</span>[<span class="extype" name="org.apache.kafka.common.TopicPartition">TopicPartition</span>, <span class="extype" name="kafka.common.OffsetAndMetadata">OffsetAndMetadata</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@allOffsets:scala.collection.immutable.Map[org.apache.kafka.common.TopicPartition,kafka.common.OffsetAndMetadata]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@clone():Object" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="kafka.manager.utils.one10.GroupMetadata#completePendingTxnOffsetCommit" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="completePendingTxnOffsetCommit(producerId:Long,isCommit:Boolean):Unit"></a>
+      <a id="completePendingTxnOffsetCommit(Long,Boolean):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">completePendingTxnOffsetCommit</span><span class="params">(<span name="producerId">producerId: <span class="extype" name="scala.Long">Long</span></span>, <span name="isCommit">isCommit: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@completePendingTxnOffsetCommit(producerId:Long,isCommit:Boolean):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.utils.Logging#debug" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="debug(msg:&lt;?&gt;,e:&lt;?&gt;):Unit"></a>
+      <a id="debug(⇒String,⇒Throwable):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">debug</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="e">e: ⇒ <span class="extype" name="scala.Throwable">Throwable</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@debug(msg:=&gt;String,e:=&gt;Throwable):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+    </li><li name="kafka.utils.Logging#debug" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="debug(msg:&lt;?&gt;):Unit"></a>
+      <a id="debug(⇒String):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">debug</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@debug(msg:=&gt;String):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="kafka.utils.Logging#error" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="error(msg:&lt;?&gt;,e:&lt;?&gt;):Unit"></a>
+      <a id="error(⇒String,⇒Throwable):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">error</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="e">e: ⇒ <span class="extype" name="scala.Throwable">Throwable</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@error(msg:=&gt;String,e:=&gt;Throwable):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+    </li><li name="kafka.utils.Logging#error" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="error(msg:&lt;?&gt;):Unit"></a>
+      <a id="error(⇒String):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">error</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@error(msg:=&gt;String):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+    </li><li name="kafka.manager.utils.one10.GroupMetadata#failPendingOffsetWrite" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="failPendingOffsetWrite(topicPartition:org.apache.kafka.common.TopicPartition,offset:kafka.common.OffsetAndMetadata):Unit"></a>
+      <a id="failPendingOffsetWrite(TopicPartition,OffsetAndMetadata):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">failPendingOffsetWrite</span><span class="params">(<span name="topicPartition">topicPartition: <span class="extype" name="org.apache.kafka.common.TopicPartition">TopicPartition</span></span>, <span name="offset">offset: <span class="extype" name="kafka.common.OffsetAndMetadata">OffsetAndMetadata</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@failPendingOffsetWrite(topicPartition:org.apache.kafka.common.TopicPartition,offset:kafka.common.OffsetAndMetadata):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.utils.one10.GroupMetadata#failPendingTxnOffsetCommit" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="failPendingTxnOffsetCommit(producerId:Long,topicPartition:org.apache.kafka.common.TopicPartition):Unit"></a>
+      <a id="failPendingTxnOffsetCommit(Long,TopicPartition):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">failPendingTxnOffsetCommit</span><span class="params">(<span name="producerId">producerId: <span class="extype" name="scala.Long">Long</span></span>, <span name="topicPartition">topicPartition: <span class="extype" name="org.apache.kafka.common.TopicPartition">TopicPartition</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@failPendingTxnOffsetCommit(producerId:Long,topicPartition:org.apache.kafka.common.TopicPartition):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.utils.Logging#fatal" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="fatal(msg:&lt;?&gt;,e:&lt;?&gt;):Unit"></a>
+      <a id="fatal(⇒String,⇒Throwable):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">fatal</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="e">e: ⇒ <span class="extype" name="scala.Throwable">Throwable</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@fatal(msg:=&gt;String,e:=&gt;Throwable):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+    </li><li name="kafka.utils.Logging#fatal" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="fatal(msg:&lt;?&gt;):Unit"></a>
+      <a id="fatal(⇒String):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">fatal</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@fatal(msg:=&gt;String):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="kafka.manager.utils.one10.GroupMetadata#generateMemberIdSuffix" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="generateMemberIdSuffix:String"></a>
+      <a id="generateMemberIdSuffix:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">generateMemberIdSuffix</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@generateMemberIdSuffix:String" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.utils.one10.GroupMetadata#generationId" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="generationId:Int"></a>
+      <a id="generationId:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">var</span>
+      </span>
+      <span class="symbol">
+        <span class="name">generationId</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@generationId:Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.utils.one10.GroupMetadata#get" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="get(memberId:String):kafka.manager.utils.one10.MemberMetadata"></a>
+      <a id="get(String):MemberMetadata"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">get</span><span class="params">(<span name="memberId">memberId: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="MemberMetadata.html" class="extype" name="kafka.manager.utils.one10.MemberMetadata">MemberMetadata</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@get(memberId:String):kafka.manager.utils.one10.MemberMetadata" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="kafka.manager.utils.one10.GroupMetadata#groupId" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="groupId:String"></a>
+      <a id="groupId:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">groupId</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@groupId:String" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.utils.one10.GroupMetadata#has" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="has(memberId:String):Boolean"></a>
+      <a id="has(String):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">has</span><span class="params">(<span name="memberId">memberId: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@has(memberId:String):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.utils.one10.GroupMetadata#hasOffsets" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="hasOffsets:Boolean"></a>
+      <a id="hasOffsets:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hasOffsets</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@hasOffsets:Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.utils.one10.GroupMetadata#hasPendingOffsetCommitsFromProducer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="hasPendingOffsetCommitsFromProducer(producerId:Long):Boolean"></a>
+      <a id="hasPendingOffsetCommitsFromProducer(Long):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hasPendingOffsetCommitsFromProducer</span><span class="params">(<span name="producerId">producerId: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@hasPendingOffsetCommitsFromProducer(producerId:Long):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.utils.one10.GroupMetadata#hasReceivedConsistentOffsetCommits" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="hasReceivedConsistentOffsetCommits:Boolean"></a>
+      <a id="hasReceivedConsistentOffsetCommits:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hasReceivedConsistentOffsetCommits</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@hasReceivedConsistentOffsetCommits:Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="kafka.utils.Logging#info" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="info(msg:&lt;?&gt;,e:&lt;?&gt;):Unit"></a>
+      <a id="info(⇒String,⇒Throwable):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">info</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="e">e: ⇒ <span class="extype" name="scala.Throwable">Throwable</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@info(msg:=&gt;String,e:=&gt;Throwable):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+    </li><li name="kafka.utils.Logging#info" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="info(msg:&lt;?&gt;):Unit"></a>
+      <a id="info(⇒String):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">info</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@info(msg:=&gt;String):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+    </li><li name="kafka.manager.utils.one10.GroupMetadata#initializeOffsets" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="initializeOffsets(offsets:scala.collection.Map[org.apache.kafka.common.TopicPartition,kafka.manager.utils.one10.CommitRecordMetadataAndOffset],pendingTxnOffsets:scala.collection.Map[Long,scala.collection.mutable.Map[org.apache.kafka.common.TopicPartition,kafka.manager.utils.one10.CommitRecordMetadataAndOffset]]):Unit"></a>
+      <a id="initializeOffsets(Map[TopicPartition,CommitRecordMetadataAndOffset],Map[Long,Map[TopicPartition,CommitRecordMetadataAndOffset]]):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">initializeOffsets</span><span class="params">(<span name="offsets">offsets: <span class="extype" name="scala.collection.Map">Map</span>[<span class="extype" name="org.apache.kafka.common.TopicPartition">TopicPartition</span>, <a href="CommitRecordMetadataAndOffset.html" class="extype" name="kafka.manager.utils.one10.CommitRecordMetadataAndOffset">CommitRecordMetadataAndOffset</a>]</span>, <span name="pendingTxnOffsets">pendingTxnOffsets: <span class="extype" name="scala.collection.Map">Map</span>[<span class="extype" name="scala.Long">Long</span>, <span class="extype" name="scala.collection.mutable.Map">Map</span>[<span class="extype" name="org.apache.kafka.common.TopicPartition">TopicPartition</span>, <a href="CommitRecordMetadataAndOffset.html" class="extype" name="kafka.manager.utils.one10.CommitRecordMetadataAndOffset">CommitRecordMetadataAndOffset</a>]]</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@initializeOffsets(offsets:scala.collection.Map[org.apache.kafka.common.TopicPartition,kafka.manager.utils.one10.CommitRecordMetadataAndOffset],pendingTxnOffsets:scala.collection.Map[Long,scala.collection.mutable.Map[org.apache.kafka.common.TopicPartition,kafka.manager.utils.one10.CommitRecordMetadataAndOffset]]):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.utils.Logging#isDebugEnabled" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isDebugEnabled:Boolean"></a>
+      <a id="isDebugEnabled:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isDebugEnabled</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@isDebugEnabled:Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="kafka.manager.utils.one10.GroupMetadata#isLeader" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="isLeader(memberId:String):Boolean"></a>
+      <a id="isLeader(String):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isLeader</span><span class="params">(<span name="memberId">memberId: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@isLeader(memberId:String):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.utils.Logging#isTraceEnabled" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isTraceEnabled:Boolean"></a>
+      <a id="isTraceEnabled:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isTraceEnabled</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@isTraceEnabled:Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+    </li><li name="kafka.manager.utils.one10.GroupMetadata#leaderId" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="leaderId:Option[String]"></a>
+      <a id="leaderId:Option[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">var</span>
+      </span>
+      <span class="symbol">
+        <span class="name">leaderId</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@leaderId:Option[String]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.utils.one10.GroupMetadata#leaderOrNull" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="leaderOrNull:String"></a>
+      <a id="leaderOrNull:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">leaderOrNull</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@leaderOrNull:String" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.utils.Logging#logIdent" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="logIdent:String"></a>
+      <a id="logIdent:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">var</span>
+      </span>
+      <span class="symbol">
+        <span class="name">logIdent</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@logIdent:String" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+    </li><li name="kafka.utils.Logging#logger" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="logger:com.typesafe.scalalogging.Logger"></a>
+      <a id="logger:Logger"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">logger</span><span class="result">: <span class="extype" name="com.typesafe.scalalogging.Logger">Logger</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@logger:com.typesafe.scalalogging.Logger" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+    </li><li name="kafka.utils.Logging#loggerName" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loggerName:String"></a>
+      <a id="loggerName:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">loggerName</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@loggerName:String" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+    </li><li name="kafka.utils.Logging#msgWithLogIdent" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="msgWithLogIdent(msg:&lt;?&gt;):String"></a>
+      <a id="msgWithLogIdent(String):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">msgWithLogIdent</span><span class="params">(<span name="msg">msg: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@msgWithLogIdent(msg:String):String" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="kafka.manager.utils.one10.GroupMetadata#newMemberAdded" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="newMemberAdded:Boolean"></a>
+      <a id="newMemberAdded:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">var</span>
+      </span>
+      <span class="symbol">
+        <span class="name">newMemberAdded</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@newMemberAdded:Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@notify():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="kafka.manager.utils.one10.GroupMetadata#numOffsets" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="numOffsets:Int"></a>
+      <a id="numOffsets:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">numOffsets</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@numOffsets:Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.utils.one10.GroupMetadata#offset" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="offset(topicPartition:org.apache.kafka.common.TopicPartition):Option[kafka.common.OffsetAndMetadata]"></a>
+      <a id="offset(TopicPartition):Option[OffsetAndMetadata]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">offset</span><span class="params">(<span name="topicPartition">topicPartition: <span class="extype" name="org.apache.kafka.common.TopicPartition">TopicPartition</span></span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="kafka.common.OffsetAndMetadata">OffsetAndMetadata</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@offset(topicPartition:org.apache.kafka.common.TopicPartition):Option[kafka.common.OffsetAndMetadata]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.utils.one10.GroupMetadata#offsetWithRecordMetadata" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="offsetWithRecordMetadata(topicPartition:org.apache.kafka.common.TopicPartition):Option[kafka.manager.utils.one10.CommitRecordMetadataAndOffset]"></a>
+      <a id="offsetWithRecordMetadata(TopicPartition):Option[CommitRecordMetadataAndOffset]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">offsetWithRecordMetadata</span><span class="params">(<span name="topicPartition">topicPartition: <span class="extype" name="org.apache.kafka.common.TopicPartition">TopicPartition</span></span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<a href="CommitRecordMetadataAndOffset.html" class="extype" name="kafka.manager.utils.one10.CommitRecordMetadataAndOffset">CommitRecordMetadataAndOffset</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@offsetWithRecordMetadata(topicPartition:org.apache.kafka.common.TopicPartition):Option[kafka.manager.utils.one10.CommitRecordMetadataAndOffset]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.utils.one10.GroupMetadata#onOffsetCommitAppend" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="onOffsetCommitAppend(topicPartition:org.apache.kafka.common.TopicPartition,offsetWithCommitRecordMetadata:kafka.manager.utils.one10.CommitRecordMetadataAndOffset):Unit"></a>
+      <a id="onOffsetCommitAppend(TopicPartition,CommitRecordMetadataAndOffset):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">onOffsetCommitAppend</span><span class="params">(<span name="topicPartition">topicPartition: <span class="extype" name="org.apache.kafka.common.TopicPartition">TopicPartition</span></span>, <span name="offsetWithCommitRecordMetadata">offsetWithCommitRecordMetadata: <a href="CommitRecordMetadataAndOffset.html" class="extype" name="kafka.manager.utils.one10.CommitRecordMetadataAndOffset">CommitRecordMetadataAndOffset</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@onOffsetCommitAppend(topicPartition:org.apache.kafka.common.TopicPartition,offsetWithCommitRecordMetadata:kafka.manager.utils.one10.CommitRecordMetadataAndOffset):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.utils.one10.GroupMetadata#onTxnOffsetCommitAppend" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="onTxnOffsetCommitAppend(producerId:Long,topicPartition:org.apache.kafka.common.TopicPartition,commitRecordMetadataAndOffset:kafka.manager.utils.one10.CommitRecordMetadataAndOffset):Unit"></a>
+      <a id="onTxnOffsetCommitAppend(Long,TopicPartition,CommitRecordMetadataAndOffset):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">onTxnOffsetCommitAppend</span><span class="params">(<span name="producerId">producerId: <span class="extype" name="scala.Long">Long</span></span>, <span name="topicPartition">topicPartition: <span class="extype" name="org.apache.kafka.common.TopicPartition">TopicPartition</span></span>, <span name="commitRecordMetadataAndOffset">commitRecordMetadataAndOffset: <a href="CommitRecordMetadataAndOffset.html" class="extype" name="kafka.manager.utils.one10.CommitRecordMetadataAndOffset">CommitRecordMetadataAndOffset</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@onTxnOffsetCommitAppend(producerId:Long,topicPartition:org.apache.kafka.common.TopicPartition,commitRecordMetadataAndOffset:kafka.manager.utils.one10.CommitRecordMetadataAndOffset):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.utils.one10.GroupMetadata#overview" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="overview:kafka.manager.utils.one10.GroupOverview"></a>
+      <a id="overview:GroupOverview"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">overview</span><span class="result">: <a href="GroupOverview.html" class="extype" name="kafka.manager.utils.one10.GroupOverview">GroupOverview</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@overview:kafka.manager.utils.one10.GroupOverview" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.utils.one10.GroupMetadata#prepareOffsetCommit" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="prepareOffsetCommit(offsets:scala.collection.Map[org.apache.kafka.common.TopicPartition,kafka.common.OffsetAndMetadata]):Unit"></a>
+      <a id="prepareOffsetCommit(Map[TopicPartition,OffsetAndMetadata]):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">prepareOffsetCommit</span><span class="params">(<span name="offsets">offsets: <span class="extype" name="scala.collection.Map">Map</span>[<span class="extype" name="org.apache.kafka.common.TopicPartition">TopicPartition</span>, <span class="extype" name="kafka.common.OffsetAndMetadata">OffsetAndMetadata</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@prepareOffsetCommit(offsets:scala.collection.Map[org.apache.kafka.common.TopicPartition,kafka.common.OffsetAndMetadata]):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.utils.one10.GroupMetadata#prepareTxnOffsetCommit" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="prepareTxnOffsetCommit(producerId:Long,offsets:scala.collection.Map[org.apache.kafka.common.TopicPartition,kafka.common.OffsetAndMetadata]):Unit"></a>
+      <a id="prepareTxnOffsetCommit(Long,Map[TopicPartition,OffsetAndMetadata]):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">prepareTxnOffsetCommit</span><span class="params">(<span name="producerId">producerId: <span class="extype" name="scala.Long">Long</span></span>, <span name="offsets">offsets: <span class="extype" name="scala.collection.Map">Map</span>[<span class="extype" name="org.apache.kafka.common.TopicPartition">TopicPartition</span>, <span class="extype" name="kafka.common.OffsetAndMetadata">OffsetAndMetadata</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@prepareTxnOffsetCommit(producerId:Long,offsets:scala.collection.Map[org.apache.kafka.common.TopicPartition,kafka.common.OffsetAndMetadata]):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.utils.one10.GroupMetadata#protocol" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="protocol:Option[String]"></a>
+      <a id="protocol:Option[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">var</span>
+      </span>
+      <span class="symbol">
+        <span class="name">protocol</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@protocol:Option[String]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.utils.one10.GroupMetadata#protocolOrNull" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="protocolOrNull:String"></a>
+      <a id="protocolOrNull:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">protocolOrNull</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@protocolOrNull:String" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.utils.one10.GroupMetadata#protocolType" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="protocolType:Option[String]"></a>
+      <a id="protocolType:Option[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">var</span>
+      </span>
+      <span class="symbol">
+        <span class="name">protocolType</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@protocolType:Option[String]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.utils.one10.GroupMetadata#remove" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="remove(memberId:String):Unit"></a>
+      <a id="remove(String):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">remove</span><span class="params">(<span name="memberId">memberId: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@remove(memberId:String):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.utils.one10.GroupMetadata#removeExpiredOffsets" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="removeExpiredOffsets(startMs:Long):scala.collection.Map[org.apache.kafka.common.TopicPartition,kafka.common.OffsetAndMetadata]"></a>
+      <a id="removeExpiredOffsets(Long):Map[TopicPartition,OffsetAndMetadata]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">removeExpiredOffsets</span><span class="params">(<span name="startMs">startMs: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.collection.Map">Map</span>[<span class="extype" name="org.apache.kafka.common.TopicPartition">TopicPartition</span>, <span class="extype" name="kafka.common.OffsetAndMetadata">OffsetAndMetadata</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@removeExpiredOffsets(startMs:Long):scala.collection.Map[org.apache.kafka.common.TopicPartition,kafka.common.OffsetAndMetadata]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.utils.one10.GroupMetadata#removeOffsets" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="removeOffsets(topicPartitions:Seq[org.apache.kafka.common.TopicPartition]):scala.collection.immutable.Map[org.apache.kafka.common.TopicPartition,kafka.common.OffsetAndMetadata]"></a>
+      <a id="removeOffsets(Seq[TopicPartition]):Map[TopicPartition,OffsetAndMetadata]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">removeOffsets</span><span class="params">(<span name="topicPartitions">topicPartitions: <span class="extype" name="scala.collection.Seq">Seq</span>[<span class="extype" name="org.apache.kafka.common.TopicPartition">TopicPartition</span>]</span>)</span><span class="result">: <span class="extype" name="scala.collection.immutable.Map">Map</span>[<span class="extype" name="org.apache.kafka.common.TopicPartition">TopicPartition</span>, <span class="extype" name="kafka.common.OffsetAndMetadata">OffsetAndMetadata</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@removeOffsets(topicPartitions:Seq[org.apache.kafka.common.TopicPartition]):scala.collection.immutable.Map[org.apache.kafka.common.TopicPartition,kafka.common.OffsetAndMetadata]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.utils.one10.GroupMetadata#supportsProtocols" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="supportsProtocols(memberProtocols:scala.collection.Set[String]):Boolean"></a>
+      <a id="supportsProtocols(Set[String]):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">supportsProtocols</span><span class="params">(<span name="memberProtocols">memberProtocols: <span class="extype" name="scala.collection.Set">Set</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@supportsProtocols(memberProtocols:scala.collection.Set[String]):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="kafka.manager.utils.one10.GroupMetadata#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@toString():String" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="kafka.manager.utils.one10.GroupMetadata">GroupMetadata</a> → AnyRef → Any</dd></dl></div>
+    </li><li name="kafka.utils.Logging#trace" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="trace(msg:=&gt;String,e:=&gt;Throwable):Unit"></a>
+      <a id="trace(⇒String,⇒Throwable):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">trace</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="e">e: ⇒ <span class="extype" name="scala.Throwable">Throwable</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@trace(msg:=&gt;String,e:=&gt;Throwable):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+    </li><li name="kafka.utils.Logging#trace" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="trace(msg:=&gt;String):Unit"></a>
+      <a id="trace(⇒String):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">trace</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@trace(msg:=&gt;String):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@wait():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="kafka.utils.Logging#warn" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="warn(msg:&lt;?&gt;,e:&lt;?&gt;):Unit"></a>
+      <a id="warn(⇒String,⇒Throwable):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">warn</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="e">e: ⇒ <span class="extype" name="scala.Throwable">Throwable</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@warn(msg:=&gt;String,e:=&gt;Throwable):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+    </li><li name="kafka.utils.Logging#warn" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="warn(msg:&lt;?&gt;):Unit"></a>
+      <a id="warn(⇒String):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">warn</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#kafka.manager.utils.one10.GroupMetadata@warn(msg:=&gt;String):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="kafka.utils.Logging">
+              <h3>Inherited from <span class="extype" name="kafka.utils.Logging">Logging</span></h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

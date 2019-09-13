@@ -1,0 +1,39 @@
+apiVersion: apps/v1beta2
+kind: StatefulSet
+metadata:
+  name: keycloak-ss
+spec:
+  selector:
+    matchLabels:
+      app: keycloak
+  serviceName: keycloak-svc
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: keycloak
+    spec:
+      containers:
+        - name: keycloak-pod
+          image: jboss/keycloak
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+            - name: data                   
+              mountPath: /opt/jboss/keycloak/standalone/data/
+              readOnly: false
+          env:
+            - name: KEYCLOAK_USER
+              value: admin
+            - name: KEYCLOAK_PASSWORD
+              value: admin
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        storageClassName: sc-local
+        resources:
+          requests:
+            storage: 30Gi
+        accessModes:
+          - ReadWriteOnce

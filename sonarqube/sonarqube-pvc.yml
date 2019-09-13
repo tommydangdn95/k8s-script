@@ -1,0 +1,47 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: sonarqube-pvc-extensions
+spec:
+  storageClassName: sc-local
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 9Gi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: sonarqube-pvc-data
+spec:
+  storageClassName: sc-local
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: sonarqube-pvc-logs
+spec:
+  storageClassName: sc-local
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 6Gi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: sonarqube-pvc-conf
+spec:
+  storageClassName: sc-local
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi

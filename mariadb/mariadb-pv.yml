@@ -1,0 +1,14 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: mariadb-pv
+  labels:
+    type: local
+spec:
+  storageClassName: sc-local
+  capacity:
+    storage: 15Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/media/hdd/mariadb"
