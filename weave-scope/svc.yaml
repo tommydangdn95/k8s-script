@@ -10,7 +10,7 @@ metadata:
     weave-scope-component: app
   namespace: weave
 spec:
-  type: LoadBalancer  # set type NodePort de node co port expose serice ra ngoai
+  type: NodePort  # set type NodePort de node co port expose serice ra ngoai
   sessionAffinity: ClientIP
   ports:
     - name: app
